@@ -5,6 +5,7 @@ import cn from "classnames";
 import GoodsList from "../GoodsList/GoodsList";
 import Preloader from "../Preloader/Preloader";
 import { API_KEY, API_URL } from "../../config";
+import Cart from "../Cart/Cart";
 
 function Shop() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ function Shop() {
 
   return (
     <div className={cn(styles.shop, "container", "content")}>
+      <Cart quantity={goods.length} />
       {loading ? <Preloader /> : <GoodsList goods={goods} />}
     </div>
   );
