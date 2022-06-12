@@ -6,11 +6,13 @@ import GoodsList from "../GoodsList/GoodsList";
 import Preloader from "../Preloader/Preloader";
 import { API_KEY, API_URL } from "../../config";
 import Cart from "../Cart/Cart";
+import BaketList from "../BaketList/BaketList";
 
 function Shop() {
   const [loading, setLoading] = useState(true);
   const [goods, setGoods] = useState([]);
   const [order, setOrder] = useState([]);
+  const [isBsaketShow, setBasketshow] = useState(false);
   useEffect(function getGoods() {
     fetch(API_URL, {
       headers: {
@@ -48,16 +50,20 @@ function Shop() {
       setOrder(newOrder);
     }
   };
-
-  useEffect(function getGoods() {}, []);
+  const handleBaketShow = () => {
+    setBasketshow(!isBsaketShow);
+  };
 
   return (
     <div className={cn(styles.shop, "container", "content")}>
-      <Cart quantity={order.length} />
+      <Cart quantity={order.length} handleBaketShow={handleBaketShow} />
       {loading ? (
         <Preloader />
       ) : (
         <GoodsList goods={goods} addToBacket={addToBacket} />
+      )}
+      {isBsaketShow && (
+        <BaketList order={order} handleBaketShow={handleBaketShow} />
       )}
     </div>
   );
