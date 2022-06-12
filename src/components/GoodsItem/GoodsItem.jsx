@@ -4,10 +4,10 @@ import styles from "./GoodsItem.module.css";
 import cn from "classnames";
 
 function GoodsItem(props) {
+  const { addToBacket = Function.prototype } = props;
   const { id, name, description, images } = props.granted[0];
   const { regularPrice: price } = props.price;
-  // console.log(id);
-  // console.log(images.full_background);
+
   return (
     <div className={cn(styles.item, "card")} id={id}>
       <div className="card-image">
@@ -19,7 +19,12 @@ function GoodsItem(props) {
         <p>{description}</p>
       </div>
       <div className="card-action">
-        <button className="btn">Купить</button>
+        <button
+          className="btn"
+          onClick={() => addToBacket({ id, name, price })}
+        >
+          Купить
+        </button>
         <span className="right" style={{ fontSize: "1.8rem" }}>
           {price} руб.
         </span>
