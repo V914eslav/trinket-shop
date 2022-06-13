@@ -57,6 +57,36 @@ function Shop() {
     const newOrder = order.filter((el) => el.id !== itemId);
     setOrder(newOrder);
   };
+  const incQuantity = (itemId) => {
+    const newOrder = order.map((el) => {
+      if (el.id === itemId) {
+        const newQuantity = el.quantity + 1;
+        return {
+          ...el,
+          quantity: newQuantity,
+        };
+      } else {
+        return el;
+      }
+    });
+    setOrder(newOrder);
+  };
+
+  const decQuantity = (itemId) => {
+    const newOrder = order.map((el) => {
+      if (el.id === itemId) {
+        const newQuantity = el.quantity - 1;
+        return {
+          ...el,
+          quantity: newQuantity >= 0 ? newQuantity : 0,
+        };
+      } else {
+        return el;
+      }
+    });
+    setOrder(newOrder);
+  };
+
   return (
     <div className={cn(styles.shop, "container", "content")}>
       <Cart quantity={order.length} handleBaketShow={handleBaketShow} />
@@ -70,6 +100,8 @@ function Shop() {
           order={order}
           handleBaketShow={handleBaketShow}
           removeFromBasket={removeFromBasket}
+          incQuantity={incQuantity}
+          decQuantity={decQuantity}
         />
       )}
     </div>

@@ -9,6 +9,8 @@ function BaketList(props) {
     order = [],
     handleBaketShow = Function.prototype,
     removeFromBasket = Function.prototype,
+    decQuantity = Function.prototype,
+    incQuantity = Function.prototype,
   } = props;
 
   const totalPrice = order.reduce((sum, el) => {
@@ -24,6 +26,8 @@ function BaketList(props) {
             <BasketItem
               key={item.id}
               removeFromBasket={removeFromBasket}
+              decQuantity={decQuantity}
+              incQuantity={incQuantity}
               {...item}
             />
           );
