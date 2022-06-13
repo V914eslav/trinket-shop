@@ -53,7 +53,10 @@ function Shop() {
   const handleBaketShow = () => {
     setBasketshow(!isBsaketShow);
   };
-
+  const removeFromBasket = (itemId) => {
+    const newOrder = order.filter((el) => el.id !== itemId);
+    setOrder(newOrder);
+  };
   return (
     <div className={cn(styles.shop, "container", "content")}>
       <Cart quantity={order.length} handleBaketShow={handleBaketShow} />
@@ -63,7 +66,11 @@ function Shop() {
         <GoodsList goods={goods} addToBacket={addToBacket} />
       )}
       {isBsaketShow && (
-        <BaketList order={order} handleBaketShow={handleBaketShow} />
+        <BaketList
+          order={order}
+          handleBaketShow={handleBaketShow}
+          removeFromBasket={removeFromBasket}
+        />
       )}
     </div>
   );
