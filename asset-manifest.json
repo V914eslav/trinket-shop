@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/https//v914eslav/.github.io/trinket-shop/static/css/main.97da8f86.css",
+    "main.js": "/https//v914eslav/.github.io/trinket-shop/static/js/main.57d7d4bd.js",
+    "index.html": "/https//v914eslav/.github.io/trinket-shop/index.html",
+    "main.97da8f86.css.map": "/https//v914eslav/.github.io/trinket-shop/static/css/main.97da8f86.css.map",
+    "main.57d7d4bd.js.map": "/https//v914eslav/.github.io/trinket-shop/static/js/main.57d7d4bd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97da8f86.css",
+    "static/js/main.57d7d4bd.js"
+  ]
+}
