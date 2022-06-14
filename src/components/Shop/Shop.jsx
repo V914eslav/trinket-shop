@@ -7,12 +7,14 @@ import Preloader from "../Preloader/Preloader";
 import { API_KEY, API_URL } from "../../config";
 import Cart from "../Cart/Cart";
 import BaketList from "../BaketList/BaketList";
+import Alert from "../Alert/Alert";
 
 function Shop() {
   const [loading, setLoading] = useState(true);
   const [goods, setGoods] = useState([]);
   const [order, setOrder] = useState([]);
   const [isBsaketShow, setBasketshow] = useState(false);
+  const [alertName, setAlertName] = useState(false);
   useEffect(function getGoods() {
     fetch(API_URL, {
       headers: {
@@ -49,6 +51,7 @@ function Shop() {
       });
       setOrder(newOrder);
     }
+    setAlertName(item.name);
   };
   const handleBaketShow = () => {
     setBasketshow(!isBsaketShow);
@@ -86,6 +89,9 @@ function Shop() {
     });
     setOrder(newOrder);
   };
+  const closeAlert = (name) => {
+    setAlertName("");
+  };
 
   return (
     <div className={cn(styles.shop, "container", "content")}>
@@ -104,6 +110,7 @@ function Shop() {
           decQuantity={decQuantity}
         />
       )}
+      {alertName ? <Alert closeAlert={closeAlert} name={alertName} /> : null}
     </div>
   );
 }

@@ -16,3 +16,12 @@
   right: 4px;
   top: 4px;
 }
+.checkout {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  border-left: 3px solid white;
+  /* border-top: 3px solid white; */
+  padding: 10px 40px;
+  background-color: blue;
+}

@@ -38,6 +38,11 @@ function BaketList(props) {
 
       <li className="collection-item active">
         Общая стоимость: {totalPrice} руб.
+        <span
+          className={cn("secondary-content", "btn-samll", styles["checkout"])}
+        >
+          Оформить
+        </span>
       </li>
       <i
         className={cn("material-icons", styles["backet-close"])}
