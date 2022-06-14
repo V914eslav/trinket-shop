@@ -8,12 +8,17 @@ export default class Header extends Component {
     return (
       <nav className={cn("green", "darken-1", styles.nav)}>
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo">
+          <a href="/" className="brand-logo">
             React Movies
           </a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <a href="sass.html">Sass</a>
+              <a
+                href="https://v914eslav.github.io/trinket-shop/"
+                target="_blank"
+              >
+                Repo
+              </a>
             </li>
           </ul>
         </div>

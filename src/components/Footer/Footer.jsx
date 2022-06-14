@@ -9,7 +9,11 @@ export default class Footer extends Component {
         <div className="footer-copyright">
           <div className="container">
             © {new Date().getFullYear()} Copyright Text
-            <a className="grey-text text-lighten-4 right" href="#!">
+            <a
+              className="grey-text text-lighten-4 right"
+              href="https://v914eslav.github.io/trinket-shop/"
+              target="_blank"
+            >
               Repo
             </a>
           </div>
