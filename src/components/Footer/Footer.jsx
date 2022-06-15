@@ -13,6 +13,7 @@ export default class Footer extends Component {
               className="grey-text text-lighten-4 right"
               href="https://v914eslav.github.io/trinket-shop/"
               target="_blank"
+              rel="noreferrer"
             >
               Repo
             </a>

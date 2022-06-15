@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../../context/context";
 
 import styles from "./BasketItem.module.css";
 import cn from "classnames";
@@ -13,6 +14,8 @@ function BasketItem(props) {
     decQuantity = Function.prototype,
     incQuantity = Function.prototype,
   } = props;
+  const { example } = useContext(ShopContext);
+  console.log(example);
   return (
     <li className="collection-item">
       {name}

@@ -11,6 +11,7 @@ function Alert(props) {
     return () => {
       clearTimeout(timerId);
     };
+    // eslint-disable-next-line
   }, [name]);
   return (
     <div className={cn("toast-container", styles.container)}>

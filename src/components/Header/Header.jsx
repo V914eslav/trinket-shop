@@ -16,6 +16,7 @@ export default class Header extends Component {
               <a
                 href="https://v914eslav.github.io/trinket-shop/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Repo
               </a>
