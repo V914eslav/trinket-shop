@@ -113,6 +113,6 @@ function Shop() {
       {alertName ? <Alert closeAlert={closeAlert} name={alertName} /> : null}
     </div>
   );
-}
+} 
 
 export default Shop;
