@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../../context/context";
 
 import styles from "./GoodsItem.module.css";
 import cn from "classnames";
 
 function GoodsItem(props) {
-  const { addToBacket = Function.prototype } = props;
+  // const { addToBacket = Function.prototype } = props;
   const { id, name, description, images } = props.granted[0];
   const { regularPrice: price } = props.price;
+  const { addToBasket } = useContext(ShopContext);
 
   return (
     <div className={cn(styles.item, "card")} id={id}>
@@ -21,7 +23,7 @@ function GoodsItem(props) {
       <div className="card-action">
         <button
           className="btn"
-          onClick={() => addToBacket({ id, name, price })}
+          onClick={() => addToBasket({ id, name, price })}
         >
           Купить
         </button>

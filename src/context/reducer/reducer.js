@@ -1,5 +1,7 @@
 export function reducer(state, action) {
   switch (action.type) {
+    case "SET_GOODS":
+      return { ...state, goods: action.payload || [], loading: false };
     case "REMOVE_FROM_BASKET":
       return {
         ...state,

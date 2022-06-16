@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../../context/context";
 import GoodsItem from "../GoodsItem";
 
 import styles from "./GoodsList.module.css";
 
-function GoodsList(props) {
-  const { goods = [], addToBacket = Function.prototype } = props;
+function GoodsList() {
+  const { goods = [] } = useContext(ShopContext);
 
   if (!goods.length) {
     return <h3>Nothing here</h3>;
@@ -13,9 +14,7 @@ function GoodsList(props) {
   return (
     <div className={styles.goods}>
       {goods.map((item) => {
-        return (
-          <GoodsItem key={item.mainId} {...item} addToBacket={addToBacket} />
-        );
+        return <GoodsItem key={item.mainId} {...item} />;
       })}
     </div>
   );

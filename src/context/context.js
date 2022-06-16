@@ -7,13 +7,13 @@ const initialState = {
   goods: [],
   loading: true,
   order: [],
-  isBsaketShow: [],
+  isBsaketShow: false,
   alertName: "",
 };
 
 export const ContextProvider = ({ children }) => {
   const [value, dispatch] = useReducer(reducer, initialState);
-  value.closeALert = () => {
+  value.closeAlert = () => {
     dispatch({ type: "CLOSE_ALERT" });
   };
   value.removeFromBasket = (itemId) => {
@@ -22,7 +22,7 @@ export const ContextProvider = ({ children }) => {
   value.addToBasket = (item) => {
     dispatch({ type: "ADD_TO_BASKET", payload: item });
   };
-  value.inqQuantity = (itemId) => {
+  value.incQuantity = (itemId) => {
     dispatch({ type: "INCREMENT_QUANTITY", payload: { id: itemId } });
   };
   value.decQuantity = (itemId) => {
@@ -30,6 +30,9 @@ export const ContextProvider = ({ children }) => {
   };
   value.handleBaketShow = () => {
     dispatch({ type: "TOGGLE_BASKET" });
+  };
+  value.setGoods = (data) => {
+    dispatch({ type: "SET_GOODS", payload: data });
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

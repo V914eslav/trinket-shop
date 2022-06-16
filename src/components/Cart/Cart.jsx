@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../../context/context";
 
 import styles from "./Cart.module.css";
 import cn from "classnames";
 
-function Cart(props) {
-  const { quantity = 0, handleBaketShow = Function.prototype, } = props;
+function Cart() {
+  const { order, handleBaketShow = Function.prototype } =
+    useContext(ShopContext);
+  const quantity = order.length;
   return (
     <div
       className={cn(styles.cart, "blue", "darken-4", "white-text")}
